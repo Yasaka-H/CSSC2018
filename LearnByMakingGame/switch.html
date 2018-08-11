@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>print day</title>
+    <script>
+        window.onload = function(){
+            var str = "";
+            var day = new Date().getDay();
+
+            switch (day){
+                case 0:
+                    str = "Sunday";
+                    break;
+                case 1:
+                    str = "Monday";
+                    break;
+                case 2:
+                    str = "Tuesday";
+                    break;
+                case 3:
+                    str = "Wednesday";
+                    break;
+                case 4:
+                    str = "Thursday";
+                    break;
+                case 5:
+                    str = "Friday";
+                    break;
+                case 6:
+                    str = "Saturday";
+                    break;
+            }
+            document.getElementById("day").textContent = str;
+        }
+    </script>
+</head>
+<body>
+<h1>Today is <span id="day"></span></h1>
+</body>
+</html>

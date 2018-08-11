@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>object-pen1</title>
+    <script>
+        var pen = {
+            color: "red",
+            length: 5
+        }
+        function checkLength(){
+            document.getElementById("length").textContent = pen.length;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="checkLength()">check Length</button>
+    <p>Length of pen is <span id="length"></span> cm</p>
+</body>
+</html>

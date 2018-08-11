@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kaibun</title>
+    <script>
+        function kaibun() {
+            var result = "";
+            var source = document.getElementById("source").value;
+            for(var i=0; i<source.length; i++){
+                var pos = source.length - 1 - i;
+                result += source.charAt(pos);
+            }
+            document.getElementById("result").textContent = result;
+        }
+    </script>
+</head>
+<body>
+    <input id="source"/>
+    <button onclick="kaibun()">kaibun</button>
+    <p id = "result"></p>
+</body>
+</html>

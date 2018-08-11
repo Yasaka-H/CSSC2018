@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object-pen2</title>
+    <script>
+        var pen = {
+            color: "red",
+            length: 5,
+            draw: function (){
+                this.length -= 0.01;
+            }
+        }
+        function stroke() {
+            pen.draw();
+            document.getElementById("length").textContent = pen.length;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="stroke()"> write </button>
+    <p>Length of pen is <span id="length"></span></p>
+</body>
+</html>
