@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas string image</title>
+    <script>
+        var ctx;
+        function init(){
+            var canvas = document.getElementById("canvas");
+            ctx = canvas.getContext("2d");
+            ctx.font = "36px 'Times New Romen'";
+
+            ctx.strokeStle = "blue";
+            ctx.strokeText("strokeTextによる文字", 10, 50);
+
+            ctx.fillStyle = "green";
+            ctx.fillText("fillTextによる文字", 10, 100);
+
+        }
+    </script>
+</head>
+<body onload = "init()">
+    <canvas id = "canvas" width = "350" height = "120"></canvas>
+</body>
+</html>
