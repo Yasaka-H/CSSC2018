@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>history</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        h2 {
+            color: white;
+            background-color: blue;
+        }
+        #history {
+            border: 1px solid blue;
+            width: 600px;
+        }
+        span.year {
+            color: red;
+        }
+        tr:nth-child(2n){
+            background-color: lightblue;
+        }
+    </style>
+    <script>
+        window.onload = init;
+        function init(){
+            var years = document.querySelectorAll("span.year");
+            for(var i=0; i<years.length; i++){
+                var y = years[i];
+                y.answer = y.textContent;
+                y.textContent = "______";
+                y.onclick = function(e){
+                    e.target.textContent = e.target.answer;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>安土桃山時代</h1>
+    <h2>年表</h2>
+    <table id = "history">
+        <tr><td><span class="year">1573</span>年</td><td>室町幕府が事実上の滅亡</td></tr>
+        <tr><td><span class="year">1590</span>年</td><td>豊臣秀吉日本を統一</td></tr>
+        <tr><td><span class="year">1592</span>年</td><td>文禄・慶長の役</td></tr>
+        <tr><td><span class="year">1600</span>年</td><td>関ヶ原の戦いで徳川家康が勝利</td></tr>
+    </table>
+</body>
+</html>
