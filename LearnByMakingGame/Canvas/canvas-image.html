@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas-image</title>
+    <style>
+        #field {
+            width: 800px;
+            height: 800px;
+        }
+    </style>
+    <script>
+        function init(){
+            var tamago = document.getElementById("tamago");
+
+            var field = document.getElementById("field");
+            var ctx = field.getContext("2d");
+
+            ctx.drawImage(tamago, 10, 10, 100, 100);
+            ctx.drawImage(tamago, 200, 10, 100, 200);
+            ctx.drawImage(tamago, 400, 100, 200, 100);
+        }
+    </script>
+</head>
+<body onload = "init()">
+    <canvas id="field" width="800" height="800"></canvas>
+    <img id="tamago" src="tamago.png" style="display: none;" />
+</body>
+</html>
