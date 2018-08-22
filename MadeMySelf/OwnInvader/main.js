@@ -2,7 +2,7 @@ window.addEventListener("load", init);
 
 function init() {
     stage = new createjs.Stage("myCanvas");
-    count = 0; 
+    count = 0;
     enemyList1 = [];
     playerBulletList = [];
     enemyBulletList = [];
@@ -22,7 +22,7 @@ function init() {
     player.x = 480;
     player.y = 450;
 
-    for(var i = 0; i < 15; i++) {
+    for(let i = 0; i < 15; i++) {
         enemy = new createjs.Shape();
         enemy.graphics.beginFill("blue").drawRect( i * 50 + 50, 150, 40, 40);
         enemyList1.push(enemy);
@@ -84,7 +84,7 @@ function init() {
                 stage.addChild(enemyBullet);
                 enemyBulletList.push(enemyBullet);
             }
-            count = count + 1;
+            count++;
 
             for (let i = 0; i < enemyBulletList.length; i++) {
                 enemyBulletList[i].y += 2;
