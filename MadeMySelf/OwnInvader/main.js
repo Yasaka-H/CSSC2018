@@ -110,7 +110,7 @@ function init() {
 
                         createjs.Sound.play("shot-struck1.mp3");
                         stage.removeChild(playerBulletList[i]);
-                        bulletList.splice(i, 1);
+                        playerBulletList.splice(i, 1);
 
                     }
                 }
