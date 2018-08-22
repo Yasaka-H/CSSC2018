@@ -8,6 +8,11 @@ function init() {
     enemyBulletList = [];
     scene = 0;
 
+    time = 61;
+    timeCount = new createjs.Text("time " + time, "24px serif", "white");
+    timeCount.x = 700;
+    timeCount.y = 50;
+
     let bg = new createjs.Shape();
     bg.graphics.beginFill("black")
         .drawRect(0, 0, 960, 540);
@@ -22,11 +27,12 @@ function init() {
     player.x = 480;
     player.y = 450;
 
-    for(let i = 0; i < 15; i++) {
+    for (let i = 0; i < 15; i++) {
         enemy = new createjs.Shape();
-        enemy.graphics.beginFill("blue").drawRect( i * 50 + 50, 150, 40, 40);
+        enemy.graphics.beginFill("blue").drawRect(i * 50 + 50, 150, 40, 40);
         enemyList1.push(enemy);
     }
+
 
     titleText = new createjs.Text("Shooting Game", "40px sans-serif", "white");
     titleText.x = 480;
@@ -60,14 +66,15 @@ function init() {
 
         if (scene === 1) {
             stage.addChild(player);
+            stage.addChild(timeCount);
 
             if (isPressRight === true)
                 player.x += 5;
             if (isPressLeft === true)
                 player.x -= 5;
 
-            if(count === 0){
-                for(let i = 0; i < enemyList1.length; i++){
+            if (count === 0) {
+                for (let i = 0; i < enemyList1.length; i++) {
                     enemy = enemyList1[i];
                     stage.addChild(enemy);
                 }
@@ -77,7 +84,7 @@ function init() {
                 let enemyBullet = new createjs.Shape();
                 enemyBullet.graphics.beginFill("yellow").drawCircle(0, 0, 5);
 
-                let id = Math.floor(Math.random()* 9 );
+                let id = Math.floor(Math.random() * 9);
                 enemyBullet.x = 50 * id + 75;
                 enemyBullet.y = 200;
 
@@ -117,11 +124,16 @@ function init() {
             }
 
             let clearCount = 0;
-            for(let i = 0; i < enemyList1.length; i++){
-                if(enemyList1[i]) clearCount++;
+            for (let i = 0; i < enemyList1.length; i++) {
+                if (enemyList1[i]) clearCount++;
             }
 
-            if(clearCount === 0) gameClear();
+            if (clearCount === 0) gameClear();
+
+            time = time - 1 / 60;
+            timeCount.text = Math.floor(time);
+
+            if (time <= 0) gameOver();
 
             stage.update();
         }
