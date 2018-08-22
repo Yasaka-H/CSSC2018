@@ -25,7 +25,7 @@ function init() {
     player.y = 450;
 
 
-    for(var i = 0; i < 9; i++) {
+    for(var i = 0; i < 15; i++) {
         enemy = new createjs.Shape();
         enemy.graphics.beginFill("blue").drawRect( i * 50 + 50, 150, 40, 40);
         enemyList1.push(enemy);
