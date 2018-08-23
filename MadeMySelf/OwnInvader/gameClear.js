@@ -7,7 +7,7 @@ function init() {
 
         let g = 0;
 
-        let gazou1 = new createjs.Bitmap('game.png');
+        let gazou1 = new createjs.Bitmap("game.png");
         gazou1.crossOrigin="Anonymous";
         gazou1.scaleX = 2.5 * 0.2;
         gazou1.scaleY = 2.5 * 0.2;
@@ -15,7 +15,7 @@ function init() {
         gazou1.y = 20;
         stage.addChild(gazou1);
 
-        let gazou2 = new createjs.Bitmap('clear.png');
+        let gazou2 = new createjs.Bitmap("clear.png");
         gazou2.crossOrigin="Anonymous";
         stage.addChild(gazou2);
         gazou2.scaleX = 1.5;
